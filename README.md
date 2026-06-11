@@ -96,7 +96,7 @@ APP_PORT=8001 ./scripts/deploy.sh
 ~/.yc-media-transcriber/data
 ```
 
-这些文件不会写进仓库目录。不要把真实 API key、用户媒体、转录结果、模型缓存或日志提交到 git。
+这些文件保存在本机，不会写进项目目录。
 
 ## 常见问题
 
@@ -153,15 +153,14 @@ Docker 会使用 `~/.yc-media-transcriber/.env` 和 `~/.yc-media-transcriber/dat
 
 请按这个顺序执行：
 
-1. 先检查本机环境是否具备 Docker Desktop，并确认 Docker Desktop 至少分配了 2 核 CPU 和 4 GB 内存。如果缺少 Docker 或资源不足，先告诉我。
-2. 创建或检查本地配置目录 ~/.yc-media-transcriber/，确认 ~/.yc-media-transcriber/.env 和 ~/.yc-media-transcriber/data 存在。
-3. 引导我配置第三方服务 key：
+1. 从 https://github.com/caoyucheng9510/yc-media-transcriber 下载或 clone 代码到本机 ~/yc-media-transcriber，并进入该目录。
+2. 检查本机环境是否具备 Docker Desktop，并确认 Docker Desktop 至少分配了 2 核 CPU 和 4 GB 内存。如果缺少 Docker 或资源不足，先告诉我。
+3. 创建或检查本地配置目录 ~/.yc-media-transcriber/，确认 ~/.yc-media-transcriber/.env 和 ~/.yc-media-transcriber/data 存在。
+4. 引导我配置第三方服务 key：
    - DeepSeek：去 https://platform.deepseek.com/ 注册、充值并创建 API key，写入 LLM_API_KEY。
    - TikHub：去 https://user.tikhub.io/login 注册、充值并创建 API token，写入 TIKHUB_API_KEY。
-   不要把我的 API key 打印到终端输出、聊天记录或 git diff 里。
-4. 配置完成后，使用 ./scripts/deploy.sh 构建 Docker 镜像并启动服务。默认保持 TASK_QUEUE_MAX_CONCURRENCY=1。
-5. 启动后用 curl 检查 http://127.0.0.1:8000 是否可访问，再帮我打开浏览器界面。
-6. 不要提交 .env、.venv、frontend/dist、cases、logs、.tmp、~/.yc-media-transcriber/data、模型缓存、转录产物或任何 API key。
+5. 配置完成后，使用 ./scripts/deploy.sh 构建 Docker 镜像并启动服务。默认保持 TASK_QUEUE_MAX_CONCURRENCY=1。
+6. 启动后用 curl 检查 http://127.0.0.1:8000 是否可访问，再帮我打开浏览器界面。
 
 如果启动失败，请先根据 docs/troubleshooting.md 排查，并把失败原因、已尝试步骤和下一步建议用中文告诉我。
 ```
@@ -172,4 +171,3 @@ Docker 会使用 `~/.yc-media-transcriber/.env` 和 `~/.yc-media-transcriber/dat
 - [API 说明](docs/api.md)
 - [开发与测试](docs/development.md)
 - [排障说明](docs/troubleshooting.md)
-- [Excel 批量导出方案](docs/v1-excel-batch-export-plan.md)
