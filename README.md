@@ -1,5 +1,7 @@
 # yc-media-transcriber
 
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 本地音视频转录助手。它把音频、视频和常见平台链接转成可阅读的文稿，并可以继续生成 AI 校对稿、总结、Markdown、PDF 和 Excel。
 
 这个项目面向想直接处理素材的人，而不是只给开发者看的后端服务。你不需要先理解代码结构；能打开终端、愿意按几条命令操作，就可以使用。
@@ -171,3 +173,7 @@ Docker 会使用 `~/.yc-media-transcriber/.env` 和 `~/.yc-media-transcriber/dat
 - [API 说明](docs/api.md)
 - [开发与测试](docs/development.md)
 - [排障说明](docs/troubleshooting.md)
+
+## 许可证
+
+本项目采用 MIT 许可证，详见 [LICENSE](LICENSE)。
